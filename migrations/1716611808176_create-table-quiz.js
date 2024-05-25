@@ -12,11 +12,11 @@ exports.up = (pgm) => {
     },
     img_url: {
       type: "TEXT",
-      notNull: true,
+      notNull: false,
     },
     has_img: {
       type: "BOOLEAN",
-      notNull: false,
+      notNull: true,
     },
     correct_answer: {
       type: "TEXT",
