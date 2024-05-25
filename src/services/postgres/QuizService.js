@@ -6,7 +6,9 @@ const { mapQuizToModel } = require("../../utils");
 
 class QuizService {
   constructor() {
-    this._pool = new Pool();
+    this._pool = new Pool({
+      connectionString: process.env.POSTGRES_URL,
+    });
   }
 
   async addQuiz({

@@ -6,7 +6,9 @@ const { mapAksaraToModel } = require("../../utils");
 
 class AksaraService {
   constructor() {
-    this._pool = new Pool();
+    this._pool = new Pool({
+      connectionString: process.env.POSTGRES_URL,
+    });
   }
 
   async addAksara({ number, label, imgUrl }) {
