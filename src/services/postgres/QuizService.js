@@ -132,7 +132,7 @@ class QuizService {
 
   async getTenQuizRandom() {
     const result = await this._pool.query(
-      "SELECT * FROM quiz ORDER BY RANDOM() LIMIT 5"
+      "SELECT * FROM quiz ORDER BY RANDOM() LIMIT 10"
     );
     return result.rows.map(mapQuizToModel);
   }
