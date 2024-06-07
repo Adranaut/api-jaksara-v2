@@ -32,7 +32,7 @@ class AksaraService {
 
   async getAksara() {
     const result = await this._pool.query(
-      "SELECT * FROM aksara ORDER BY number ASC"
+      "SELECT * FROM aksara ORDER BY CAST(number AS INTEGER) ASC"
     );
     return result.rows.map(mapAksaraToModel);
   }
